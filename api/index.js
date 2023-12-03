@@ -1,7 +1,7 @@
 import express from 'express';
 import serverless from 'serverless-http';
 import cors from 'cors';
-import { createDonut, fetchDonuts, updateDonut, deleteDonut } from './donut';
+import { createDonut, fetchDonuts, updateDonut, deleteDonut } from './donut.js';
 
 const app = express();
 const port = 3001;
