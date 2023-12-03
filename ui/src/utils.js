@@ -1,1 +1,1 @@
-export const API_URL = "http://localhost:3001/donut";
+export const API_URL = "https://u4zrjkplqthnhidbdvc34ikwfu0wafze.lambda-url.us-west-1.on.aws/donut";
