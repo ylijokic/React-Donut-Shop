@@ -1,12 +1,15 @@
+import React, { useState } from 'react';
+
 import { Button, IconButton, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
-import React, { useState } from 'react';
+
 import classnames from 'classnames';
-import { UpdateDonutForm } from './UpdateDonutForm.tsx';
 import axios from 'axios';
+
+import { UpdateDonutForm } from './UpdateDonutForm.jsx';
 import { API_URL } from '../utils.js';
 
 export const DonutItem = ({ donut, fetchDonuts }) => {

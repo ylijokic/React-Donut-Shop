@@ -1,6 +1,10 @@
-import { Button, Dialog, DialogTitle, TextField } from '@mui/material';
 import React, { useState } from 'react'
+
+import { Button, Dialog, DialogTitle, TextField } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import CheckIcon from '@mui/icons-material/Check';
+
 import axios from 'axios';
 import { API_URL } from '../utils';
 
@@ -29,6 +33,17 @@ export const UpdateDonutForm = ({ isDialogOpen, setIsDialogOpen, donut, fetchDon
     return (
         <Dialog open={isDialogOpen}>
             <DialogTitle>Edit Donut</DialogTitle>
+            <IconButton
+                onClick={() => setIsDialogOpen(false)}
+                sx={{
+                    position: 'absolute',
+                    right: 8,
+                    top: 8,
+                    color: (theme) => theme.palette.grey[500],
+                }}
+            >
+                <CloseIcon />
+            </IconButton>
             <div className="dialog">
                 <TextField 
                     size="small" 
@@ -41,10 +56,11 @@ export const UpdateDonutForm = ({ isDialogOpen, setIsDialogOpen, donut, fetchDon
                     size="small" 
                     label="Donut Price" 
                     variant="outlined"
-                    placeholder={price}
+                    placeholder={String(price)}
                     onChange={(e) => setDonutPrice(Number(e.target.value))}
                 />
                 <Button 
+                    disabled={!donutName.length && !donutPrice}
                     variant="contained" 
                     onClick={async () => {
                         await handleUpdateDonut();

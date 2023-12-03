@@ -1,10 +1,12 @@
-import react, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { AddDonutForm } from './components/AddDonutForm.tsx';
-import { DonutItem } from './components/DonutItem.tsx';
-import axios from 'axios';
 
+import { AddDonutForm } from './components/AddDonutForm.jsx';
+import { DonutItem } from './components/DonutItem.jsx';
+
+import axios from 'axios';
 import { API_URL } from './utils.js';
 
 const darkTheme = createTheme({

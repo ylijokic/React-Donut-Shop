@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+
 import TextField from '@mui/material/TextField';
 import { Button, Typography } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
+
 import axios from 'axios';
 import { API_URL } from '../utils';
 
@@ -44,7 +46,7 @@ export const AddDonutForm = ({ fetchDonuts }) => {
           label="Donut Price" 
           variant="outlined" 
           placeholder="Price"
-          value={newDonutPrice} 
+          value={String(newDonutPrice)} 
           onChange={(e) => setNewDonutPrice(Number(e.target.value))} 
         />
         <Button disabled={!newDonutName.length && !newDonutPrice} variant="outlined" onClick={addNewDonut}>
