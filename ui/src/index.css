@@ -4,11 +4,28 @@ body {
   justify-content: center;
 }
 
-.addDonutForm {
+.addIngredientForm {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 10px;
   margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+.ingredientsListContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid white;
+}
+
+.ingredientsList {
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .donut {
@@ -37,4 +54,16 @@ body {
 .favorite {
   text-decoration: underline #90caf9;
   font-style: italic;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.margin-bottom {
+  margin-bottom: 2rem;
 }

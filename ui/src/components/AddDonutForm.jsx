@@ -5,7 +5,7 @@ import { Button, Typography } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 
 import axios from 'axios';
-import { API_URL } from '../utils';
+import { LOCALHOST_URL } from '../utils';
 
 export const AddDonutForm = ({ fetchDonuts }) => {
   const [newDonutName, setNewDonutName] = useState('');
@@ -13,7 +13,7 @@ export const AddDonutForm = ({ fetchDonuts }) => {
 
   const addNewDonut = async () => {
     try {
-      await axios.post(API_URL, {
+      await axios.post(LOCALHOST_URL, {
         name: newDonutName,
         favorited: false,
         price: newDonutPrice,

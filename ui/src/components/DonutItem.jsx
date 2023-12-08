@@ -10,7 +10,7 @@ import classnames from 'classnames';
 import axios from 'axios';
 
 import { UpdateDonutForm } from './UpdateDonutForm.jsx';
-import { API_URL } from '../utils.js';
+import { LOCALHOST_URL } from '../utils.js';
 
 export const DonutItem = ({ donut, fetchDonuts }) => {
     const { id, name, favorited, price } = donut;
@@ -19,7 +19,7 @@ export const DonutItem = ({ donut, fetchDonuts }) => {
 
     const handleUpdateFavorited = async () => {
         try {
-            await axios.put(API_URL, {
+            await axios.put(LOCALHOST_URL, {
                 id,
                 name,
                 favorited: !favorited,
@@ -33,7 +33,7 @@ export const DonutItem = ({ donut, fetchDonuts }) => {
 
     const handleDeleteDonut = async () => {
         try {
-            await axios.delete(`${API_URL}/${id}`);
+            await axios.delete(`${LOCALHOST_URL}/${id}`);
             await fetchDonuts();
         } catch (error) {
             console.log(error);

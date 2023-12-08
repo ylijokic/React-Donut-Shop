@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import CheckIcon from '@mui/icons-material/Check';
 
 import axios from 'axios';
-import { API_URL } from '../utils';
+import { LOCALHOST_URL } from '../utils';
 
 export const UpdateDonutForm = ({ isDialogOpen, setIsDialogOpen, donut, fetchDonuts }) => {
     const {id, name, favorited, price } = donut;
@@ -15,7 +15,7 @@ export const UpdateDonutForm = ({ isDialogOpen, setIsDialogOpen, donut, fetchDon
 
     const handleUpdateDonut = async () => {
         try {
-            await axios.put(API_URL, {
+            await axios.put(LOCALHOST_URL, {
                 id,
                 name: donutName,
                 favorited,
